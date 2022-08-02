@@ -1,0 +1,152 @@
+/* Promt font import */
+@import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+/* Acme font */
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Prompt&display=swap');
+
+
+
+
+
+body{
+    margin: 0;
+    padding: 0;
+    /* background-color: #010409; */
+    /* background-color: rgba(2, 13, 32,1); */
+    background:linear-gradient( rgba(2, 13, 32,0.8), rgba(2, 13, 32,0.8) ), url('https://images.pexels.com/photos/315191/pexels-photo-315191.jpeg?auto=compress&cs=tinysrgb&w=1600');
+    
+    /* url for space pic 'https://images.pexels.com/photos/176851/pexels-photo-176851.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' */
+    /* cyberpunk alley https://images.pexels.com/photos/315191/pexels-photo-315191.jpeg?auto=compress&cs=tinysrgb&w=1600 */
+    background-size: cover;
+    /* image? */
+}
+
+/* h1 {
+    font-size: 100%;
+} */
+
+p{
+    padding-top: 6vh;
+}
+
+#main a{
+    text-decoration: none;
+}
+
+ul li {
+    color: white;
+}
+
+.buttons {
+    width: 70%;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* padding: 5px; */
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 150px;
+    opacity: 90%;
+    /* font-family: 'Prompt', sans-serif; */
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 200%;
+    /* background-color: #1fdef2; */
+    background-image: linear-gradient(180deg, #1fdef2, white);
+    border-radius: 25px;
+    color: black;
+    padding: 1% 2%;
+    text-align: center;
+    /* flex: 1; */
+    margin: 10px;
+    
+}
+
+.btn:hover {
+    /* background-color: black; Green */
+    background-image: linear-gradient(180deg, rgb(2, 13, 32),rgb(2, 13, 32));
+    color: white;
+    border: 2px solid #1fdef2;
+    opacity: 100%;
+  }
+#header{
+    margin: 1% 0;
+    padding: 0%;
+    text-align: center;
+    /* display:flex; */
+    /* justify-content: center; */
+    color: white;
+    font-family: "Lucida Console", Monaco, monospace;
+
+}
+#header h2{
+    font-size: 300%;
+    margin-top: 75px;
+}
+.navbar{
+    font-size: 150%;
+    color:#010409;
+    background-color: #1fdef2;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.navbar li{
+    color: black;
+    font-family: "Lucida Console", Monaco, monospace;
+}
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+}
+.navbar-right{
+    display: flex;
+    /* justify-content: right; */
+    margin: 0 1%;
+}
+
+.navbar-logo li {
+    font-weight: bold;
+    margin: 5px;
+}
+
+.navbar-right li{
+    font-weight: bold;
+    margin: 10px
+}
+
+.navbar a:hover {
+    color: white;
+}
+
+/*media queries
+
+@media screen and (max-width: px){
+
+} */
+
+.float{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+	position:fixed;
+    padding: 5px;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#1fdef2;
+	color:#FFF;
+	border-radius:50px;
+	/* box-shadow: 2px 2px 3px #999; */
+}
+
+/* .discord{
+    
+} */

@@ -1,0 +1,127 @@
+body{
+    /* background-color: rgb(2, 13, 32); */
+    background-color: rgb(24, 0, 4);
+    color: white;
+    font-family: "Lucida Console", Monaco, monospace;
+}
+
+.topic {
+    margin-left: 15px;
+    font-size: 30px;
+    color: red;
+    list-style: none;
+}
+
+.pagecontent{
+    margin: 100px auto; 
+    width: 80%;
+}
+
+.topic-section {
+    width: 90%;
+    border: solid 1px red;
+    border-radius:25px;
+    margin: 2% auto;
+    background-color: rgb(36, 32, 47);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.description {
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 40px 0;
+}
+
+.topic-section a {
+    color: pink;
+    text-decoration: none;
+}
+
+ol li {
+    margin: 10px 0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 300%;
+    margin-bottom: 20px;
+}
+
+.navbar{
+    font-size: 150%;
+    color:white;
+    background-color: rgb(146, 0, 0);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.navbar li{
+    list-style:none;
+    color: white;
+    font-family: "Lucida Console", Monaco, monospace;
+}
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+}
+.navbar-right{
+    display: flex;
+    justify-content: right;
+    margin: 2vh 2vw 0vh 0vw;
+}
+
+.navbar-logo li{
+    font-weight: bold;
+    margin: 5px;
+}
+
+.navbar-right li{
+    font-weight: bold;
+    margin: 10px
+}
+
+.navbar a:hover {
+    color: pink;
+}
+
+.links li {
+    margin: 10px;
+}
+
+.star-widget {
+    list-style-type: none;
+}
+
+input:checked ~ label{
+    color: #fd4;
+}
+
+.star-widget input:not(:checked) ~ label:hover,
+.star-widget input:not(:checked) ~ label:hover ~ label{
+    color: #fd4;
+
+}
+
+/* input#rate-5:checked ~ label{
+    color: #fe7;
+    text-shadow: 0 0 20px #952;
+
+} */
+
+.star-widget input {
+    display: none;
+}
+
+.star-widget label{
+    font-size: 20px;
+    color: #444;
+    padding: 10px;
+    float: right;
+    margin-top: -15px;
+    /* transition: all 0.2s ease; */
+}
