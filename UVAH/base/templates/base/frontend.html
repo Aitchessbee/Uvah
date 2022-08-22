@@ -5,25 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/navbar.css' %}">
     <link rel="stylesheet" href="{% static 'styles/frontend.css' %}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <script src="{% static 'js/script.js' %}"></script>
-    <title>Document</title>
+    <title>Frontend</title>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navbar-container">
-            <ul class="navbar-logo">
-                <li><a href="/login">UVAH</a></li>
-            </ul>
-            <ul class="navbar-right">
-                <li><a href="../../index.html">Roadmap</a></li>
-                <li><a href="../../projects/projects.html">Projects</a></li>
-                <li><a href="../../ranking/ranking.html">Ranking</a></li>
-                <li><a href="../../profile/profile.html">Profile</a></li>
-            </ul>
-        </div>
-    </nav>
+    {%  include 'navbar.html' %}
+    
     <div class="pagecontent">
     <h1>Frontend 👨‍💻</h1>
     <p class="description">Front-end web development is the development of the graphical user interface of a website, through the use of HTML, CSS, and JavaScript, so that users can view and interact with that website.</p>
@@ -61,7 +51,8 @@
                 </li>
                 <li>
                     <div class="link">
-                        <div class="url"><a href="https://www.youtube.com/watch?v=HcOc7P5BMi4">HTML Tutorial - Website Crash Course for Beginners (2021)</a> - freeCodeCamp.org</div>
+                        <div class="url"><a href="https://www.youtube.com/watch?v=HcOc7P5BMi4">HTML Tutorial for Beginners | Complete HTML with Notes & Code</a> - Apna College
+                            </div>
                         <div class="rating-flex">
                             <div class="rate-number">1</div>
                             <div class="rate-number">2</div>
@@ -74,7 +65,7 @@
                 </li>
                 <li>
                     <div class="link">
-                        <div class="url"><a href="https://www.youtube.com/watch?v=916GWv2Qs08">HTML Tutorial - Website Crash Course for Beginners (2021)</a> - freeCodeCamp.org</div>
+                        <div class="url"><a href="https://www.youtube.com/watch?v=916GWv2Qs08">HTML Tutorial For Beginners In Hindi (With Notes) 🔥</a> - CodeWithHarry</div>
                         <div class="rating-flex">
                             <div class="rate-number">1</div>
                             <div class="rate-number">2</div>
@@ -94,7 +85,19 @@
             <li class="topic">CSS</li>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, modi.</p>
                 <ul class="links">
-                    <li><a href="https://www.youtube.com/watch?v=yfoY53QXEnI">CSS Crash Course For Absolute Beginners</a> - Traversy Media</li>
+                    <li>
+                        <div class="link">
+                            <div class="url"><a href="https://www.youtube.com/watch?v=qz0aGYrrlhU">HTML Tutorial for Beginners: HTML Crash Course [2021]</a> - Programming with Mosh</div>
+                            <div class="rating-flex">
+                                <div class="rate-number">1</div>
+                                <div class="rate-number">2</div>
+                                <div class="rate-number">3</div>
+                                <div class="rate-number">4</div>
+                                <div class="rate-number">5</div>
+                            </div>
+                        </div>
+                        <iframe src="https://www.youtube.com/embed/qz0aGYrrlhU" frameborder="0" class="frame"></iframe>
+                    </li>
                     <li><a href=""></a></li>
                     <li>Link 3</li>
                     <li>Link 4</li>
