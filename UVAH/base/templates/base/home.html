@@ -7,24 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UVAH</title>
     <!-- <link rel="Stylesheet" href="index.css"> -->
+    <link rel="stylesheet" href="{% static 'styles/navbar.css' %}">
     <link rel="stylesheet" href="{% static 'styles/home.css' %}" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="navbar-container">
-            <ul class="navbar-logo">
-                <li><a href="/login">UVAH</a></li>
-                <!-- <li><a href="#"><img src="logo/UVAH.png"></a></li> -->
-            </ul>
-            <ul class="navbar-right">
-                <li><a href="index.html">Roadmap</a></li>
-                <li><a href="projects/projects.html">Projects</a></li>
-                <li><a href="ranking/ranking.html">Ranking</a></li>
-                <li><a href="profile/profile.html">Profile</a></li>
-            </ul>
-        </div>
-    </nav>
+    {% include 'base/navbar.html' %}
+
     <div id="header">
         <h2>Welcome to Roadmap Section✌🏻</h2>
         <p>

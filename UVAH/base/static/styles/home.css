@@ -88,42 +88,6 @@ ul li {
     font-size: 300%;
     margin-top: 100px;
 }
-.navbar{
-    font-size: 150%;
-    color:#010409;
-    background-color: rgb(0, 204, 255);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    border-radius: 0 0 5px 5px ;
-}
-.navbar li{
-    color: black;
-    font-family: "Lucida Console", Monaco, monospace;
-}
-.navbar-container{
-    display: flex;
-    justify-content: space-between;
-}
-.navbar-right{
-    display: flex;
-    /* justify-content: right; */
-    margin: 0 1%;
-}
-
-.navbar-logo li {
-    font-weight: bold;
-    margin: 5px;
-}
-
-.navbar-right li{
-    font-weight: bold;
-    margin: 10px
-}
-
-.navbar a:hover {
-    color: white;
-}
 
 /*media queries
 
