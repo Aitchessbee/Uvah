@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'styles/frontend.css' %}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="ratings.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <script src="{% static 'js/script.js' %}"></script>
     <title>Document</title>
 </head>
 <body>
@@ -26,74 +26,72 @@
     </nav>
     <div class="pagecontent">
     <h1>Frontend 👨‍💻</h1>
-    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates perspiciatis placeat provident, aliquid, fugit odio quae enim possimus dolorem dolores officia, incidunt aperiam eos! Fugit, porro dicta! Cupiditate vitae, non praesentium, amet ratione aut eligendi dolore corrupti earum, quos maiores tempore adipisci placeat ea iusto repudiandae. Iure itaque atque sit!</p>
+    <p class="description">Front-end web development is the development of the graphical user interface of a website, through the use of HTML, CSS, and JavaScript, so that users can view and interact with that website.</p>
     <div class="topic-section">
-        <ul>
-                <li class="topic">1. HTML</li>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, modi.</p>
-                <ul class="links">
-                    <li><a href="https://www.youtube.com/watch?v=qz0aGYrrlhU">HTML Tutorial for Beginners: HTML Crash Course [2021]</a> - Programming with Mosh
-                        <span class="star-widget" id="widget1">
-                            <input type="radio" name="rate" id="rate-5" onclick="update_rating()">
-                            <label for="rate-5" class="fas fa-star"></label>
-                            <input type="radio" name="rate" id="rate-4" onclick="update_rating()">
-                            <label for="rate-4" class="fas fa-star"></label>
-                            <input type="radio" name="rate" id="rate-3" onclick="update_rating()">
-                            <label for="rate-3" class="fas fa-star"></label>
-                            <input type="radio" name="rate" id="rate-2" onclick="update_rating()">
-                            <label for="rate-2" class="fas fa-star"></label>
-                            <input type="radio" name="rate" id="rate-1" onclick="update_rating()">
-                            <label for="rate-1" class="fas fa-star"></label>
-                        </span>
-                    </li>
-                    <li><a href="https://www.youtube.com/watch?v=UB1O30fR-EE">HTML Crash Course For Absolute Beginners</a> - Traversy Media
-                        <span class="star-widget" id="widget2">
-                            <input type="radio" name="rate1" id="rate-51" onclick="update_rating()">
-                            <label for="rate-51" class="fas fa-star"></label>
-                            <input type="radio" name="rate1" id="rate-41" onclick="update_rating()">
-                            <label for="rate-41" class="fas fa-star"></label>
-                            <input type="radio" name="rate1" id="rate-31" onclick="update_rating()">
-                            <label for="rate-31" class="fas fa-star"></label>
-                            <input type="radio" name="rate1" id="rate-21" onclick="update_rating()">
-                            <label for="rate-21" class="fas fa-star"></label>
-                            <input type="radio" name="rate1" id="rate-11" onclick="update_rating()">
-                            <label for="rate-11" class="fas fa-star"></label>
-                        </span>
-                    </li>
-                    <li><a href="https://www.youtube.com/watch?v=916GWv2Qs08">HTML Tutorial - Website Crash Course for Beginners (2021)</a> - freeCodeCamp.org
-                        <span class="star-widget" id="widget3">
-                            <input type="radio" name="rate2" id="rate-52" onclick="update_rating()">
-                            <label for="rate-52" class="fas fa-star"></label>
-                            <input type="radio" name="rate2" id="rate-42" onclick="update_rating()">
-                            <label for="rate-42" class="fas fa-star"></label>
-                            <input type="radio" name="rate2" id="rate-32" onclick="update_rating()">
-                            <label for="rate-32" class="fas fa-star"></label>
-                            <input type="radio" name="rate2" id="rate-22" onclick="update_rating()">
-                            <label for="rate-22" class="fas fa-star"></label>
-                            <input type="radio" name="rate2" id="rate-12" onclick="update_rating()">
-                            <label for="rate-12" class="fas fa-star"></label>
-                        </span>
-                    </li>
-                    <li><a href="https://www.youtube.com/watch?v=916GWv2Qs08">HTML Tutorial - Website Crash Course for Beginners (2021)</a> - freeCodeCamp.org
-                        <span class="star-widget" id="widget4">
-                            <input type="radio" name="rate3" id="rate-53" onclick="update_rating()">
-                            <label for="rate-53" class="fas fa-star"></label>
-                            <input type="radio" name="rate3" id="rate-43" onclick="update_rating()">
-                            <label for="rate-43" class="fas fa-star"></label>
-                            <input type="radio" name="rate3" id="rate-33" onclick="update_rating()">
-                            <label for="rate-33" class="fas fa-star"></label>
-                            <input type="radio" name="rate3" id="rate-23" onclick="update_rating()">
-                            <label for="rate-23" class="fas fa-star"></label>
-                            <input type="radio" name="rate3" id="rate-13" onclick="update_rating()">
-                            <label for="rate-13" class="fas fa-star"></label>
-                        </span>
-                    </li>
-                </ul>
+        <ul class="topics">
+            <li class="topic">HTML</li>
+            <p class="topic-description">HTML is the standard markup language for Web pages. With HTML you can create your own Website.</p>
+            <ul class="links">
+                <li>
+                    <div class="link">
+                        <div class="url"><a href="https://www.youtube.com/watch?v=qz0aGYrrlhU">HTML Tutorial for Beginners: HTML Crash Course [2021]</a> - Programming with Mosh</div>
+                        <div class="rating-flex">
+                            <div class="rate-number">1</div>
+                            <div class="rate-number">2</div>
+                            <div class="rate-number">3</div>
+                            <div class="rate-number">4</div>
+                            <div class="rate-number">5</div>
+                        </div>
+                    </div>
+                    <iframe src="https://www.youtube.com/embed/qz0aGYrrlhU" frameborder="0" class="frame"></iframe>
+                </li>
+
+                <li>
+                    <div class="link">
+                        <div class="url"><a href="https://www.youtube.com/watch?v=UB1O30fR-EE">HTML Crash Course For Absolute Beginners</a> - Traversy Media</div>
+                        <div class="rating-flex">
+                            <div class="rate-number">1</div>
+                            <div class="rate-number">2</div>
+                            <div class="rate-number">3</div>
+                            <div class="rate-number">4</div>
+                            <div class="rate-number">5</div>
+                        </div>
+                    </div>
+                    <iframe src="https://www.youtube.com/embed/UB1O30fR-EE" frameborder="0" class="frame"></iframe>
+                </li>
+                <li>
+                    <div class="link">
+                        <div class="url"><a href="https://www.youtube.com/watch?v=HcOc7P5BMi4">HTML Tutorial - Website Crash Course for Beginners (2021)</a> - freeCodeCamp.org</div>
+                        <div class="rating-flex">
+                            <div class="rate-number">1</div>
+                            <div class="rate-number">2</div>
+                            <div class="rate-number">3</div>
+                            <div class="rate-number">4</div>
+                            <div class="rate-number">5</div>
+                        </div>
+                    </div>
+                    <iframe src="https://www.youtube.com/embed/HcOc7P5BMi4" frameborder="0" class="frame"></iframe>   
+                </li>
+                <li>
+                    <div class="link">
+                        <div class="url"><a href="https://www.youtube.com/watch?v=916GWv2Qs08">HTML Tutorial - Website Crash Course for Beginners (2021)</a> - freeCodeCamp.org</div>
+                        <div class="rating-flex">
+                            <div class="rate-number">1</div>
+                            <div class="rate-number">2</div>
+                            <div class="rate-number">3</div>
+                            <div class="rate-number">4</div>
+                            <div class="rate-number">5</div>
+                        </div>
+                    </div>
+                    
+                    <iframe src="https://www.youtube.com/embed/BsDoLVMnmZs" frameborder="0" class="frame"></iframe>
+                </li>
+            </ul>
         </ul>
     </div>
     <div class="topic-section">
         <ul>
-            <li class="topic">2. CSS</li>
+            <li class="topic">CSS</li>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, modi.</p>
                 <ul class="links">
                     <li><a href="https://www.youtube.com/watch?v=yfoY53QXEnI">CSS Crash Course For Absolute Beginners</a> - Traversy Media</li>
@@ -105,7 +103,7 @@
     </div>
     <div class="topic-section">
         <ul>
-            <li class="topic">3. Bootstrap</li>
+            <li class="topic">Bootstrap</li>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, modi.</p>
                 <ul class="links">
                     <li><a href="https://www.youtube.com/watch?v=yfoY53QXEnI">CSS Crash Course For Absolute Beginners</a> - Traversy Media</li>
@@ -117,7 +115,7 @@
     </div>
     <div class="topic-section">
         <ul>
-            <li class="topic">4. Javascript</li>
+            <li class="topic">Javascript</li>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, modi.</p>
                 <ul class="links">
                     <li><a href="https://www.youtube.com/watch?v=yfoY53QXEnI">CSS Crash Course For Absolute Beginners</a> - Traversy Media</li>
@@ -129,7 +127,7 @@
     </div>
     <div class="topic-section">
         <ul>
-            <li class="topic">5. JQuery</li>
+            <li class="topic">JQuery</li>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, modi.</p>
                 <ul class="links">
                     <li><a href="https://www.youtube.com/watch?v=yfoY53QXEnI">CSS Crash Course For Absolute Beginners</a> - Traversy Media</li>
