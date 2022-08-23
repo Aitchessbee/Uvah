@@ -6,31 +6,59 @@ body{
     font-family: "Lucida Console", Monaco, monospace;
 }
 
+.pagecontent{
+    margin: 100px auto; 
+    width: 80%;
+}
+
+h1 {
+    text-align: center;
+    font-size: 300%;
+    margin-bottom: 20px;
+}
+
+.page-description {
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 40px 0;
+}
+
+.subtopics {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.subtopic {
+    margin: 0 1vw;
+    padding: 20px;
+    width: 100px;
+    border: solid #02d9df 3px;
+    border-radius: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.subtopic:hover {
+    background-color: #02d9df;
+    box-shadow: 0px 0px 10px 0px #02d9df;
+    color: black;
+    transition: 0.2s;
+}
+
+.subtopic.active {
+    background-color: #02d9df;
+    box-shadow: 0px 0px 10px 0px #02d9df;
+    color: black;
+}
+
 .topics {
     /* margin: 0; */
     padding: 0;
 }
 
 .topic {
-    /* margin: 1% 2% 1% 2%; */
-    font-size: 50px;
-    color: #02d9df;
-    list-style: none;
-    margin-left: 20px;
-}
-
-.topic-description {
-    font-size: 20px;
-    color: white;
-    margin-left: 20px;
-}
-
-.pagecontent{
-    margin: 100px auto; 
-    width: 80%;
-}
-
-.topic-section {
     /* width: 90%; */
     border: solid 4px rgb(166, 77, 255);
     box-shadow: 0px 0px 10px 2px  rgb(166, 77, 255);
@@ -39,27 +67,38 @@ body{
     background-color: rgb(2, 13, 32);
 }
 
-.navbar a {
-    text-decoration: none;
-    color: white;
+.topic-name {
+    /* margin: 1% 2% 1% 2%; */
+    font-size: 50px;
+    color: #02d9df;
+    list-style: none;
+    margin-left: 20px;
+    margin-top: 20px;
 }
 
-.description {
+.topic-description {
     font-size: 20px;
-    line-height: 1.5;
-    margin: 40px 0;
+    color: white;
+    margin-left: 20px;
 }
 
-.topic-section a {
-    /* color: pink; */
-    color: #59A3FF;
-    text-decoration: none;
+.links {
+    margin: 0;
+    padding: 0;
 }
 
-h1 {
-    text-align: center;
-    font-size: 300%;
-    margin-bottom: 20px;
+.links li {
+    padding: 5px;
+    border-radius:10px;
+    list-style: none;
+    margin: 2% 5%;
+    background-color:rgb(30, 30, 44, 0.5);
+    /* transition: 0.5s; */
+}
+
+.links li:hover {
+    animation: colorchange 0.5s infinite alternate;
+    background-color: rgb(30, 30, 44, 1);
 }
 
 .link {
@@ -76,13 +115,10 @@ h1 {
     width: 100%;
 }
 
-.fa-star {
-    color: #444;
-    /* margin: 0; */
-}
-
-.fa-star:hover {
-    color: #fd4;
+.url a {
+    /* color: pink; */
+    color: #59A3FF;
+    text-decoration: none;
 }
 
 .rating-flex {
@@ -112,25 +148,17 @@ h1 {
     height: 30vw;
 }
 
-.links {
-    margin: 0;
-    padding: 0;
-}
 
-.links li {
-    padding: 5px;
-    border-radius:10px;
-    list-style: none;
-    margin: 2% 5%;
-    background-color:rgb(30, 30, 44, 0.5);
-    /* transition: 0.5s; */
-}
-
-.links li:hover {
-    animation: colorchange 0.5s infinite alternate;
-    background-color: rgb(30, 30, 44, 1);
-}
 @keyframes colorchange{
     0%{background-color: rgb(30, 30, 44, 0.5);}
     100%{background-color: rgb(30, 30, 44, 1);}
+}
+
+
+
+@media (max-width: 500px) {
+    .subtopics{
+        flex-direction: column;
+        align-items: center;
+    }
 }

@@ -9,4 +9,4 @@ class Course(models.Model):
     course_title = models.CharField(max_length=200)
     course_author = models.CharField(max_length=200)
     course_link = models.CharField(max_length=200)
-    course_rating = models.IntegerField(max_length=200)
+    course_rating = models.IntegerField()

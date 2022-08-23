@@ -1,46 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+*{
+  padding:0;
+  margin:0;
+}
 .navbar{
-    font-size: 150%;
-    color:white;
-    background-color: rgb(59, 18, 153);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    border-radius: 0 0 5px 5px ;
+  font-family: 'Roboto', sans-serif;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+  color: white;
+  backdrop-filter: blur(20px);
+  color:white;
 }
 .navbar li{
-    list-style:none;
-    color: white;
-    font-family: "Lucida Console", Monaco, monospace;
+  list-style: none;
+  margin: 20px 20px;
+  font-size:30px;
 }
-.navbar-container{
-    display: flex;
-    justify-content: space-between;
+.navbar a{
+  color:white;
+  text-decoration:none;
+}
+.navbar a:hover{
+  color:#02d9df;
+  text-decoration:none;
 }
 .navbar-right{
-    display: flex;
-    justify-content: right;
-    margin: 2vh 2vw 0vh 0vw;
-}
-
-.navbar-logo li{
-    font-weight: bold;
-    margin: 5px;
-}
-
-.navbar-right li{
-    font-weight: bold;
-    margin: 10px
-}
-
-.navbar a:hover {
-    color: rgb(17, 203, 228);
-}
-
-
-a{
-    color: white;
-}
-a:hover{
-    color:white;
+  display:flex;
+  
 }
