@@ -124,7 +124,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static'
+    BASE_DIR / 'UVAH/static'
 ]
 
 
@@ -132,3 +132,9 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# for email authentication
+AUTHENTICATION_BACKENDS = (
+    "base.emailAuthentication.EmailBackend",
+    # 'django.contrib.auth.backends.ModelBackend',
+)

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/submit.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <script src="{% static 'js/script.js' %}"></script>
+    
+    <title>Submit</title>
+</head>
+<body>
+    {%  include 'base/navbar.html' %}
+    <div class="page-wrapper">
+
+        <div class="submit-box">
+            <h1>SUBMIT COURSE</h1>
+            <select name="domain" id="domain-drop" class="submit-parameter">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select>
+            <select name="topic" id="topic-drop" class="submit-parameter">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select>
+            <select name="subtopic" id="subtopic-drop" class="submit-parameter">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select>
+            <input type="url" class="submit-parameter" id="courselink" placeholder="Paste URL"/>
+            <button class="submit-btn">Submit Course</button>
+        </div>
+
+    </div>
+</body> 
+</html>
