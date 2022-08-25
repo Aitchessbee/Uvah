@@ -11,24 +11,22 @@
 </head>
 <body>
     <div id="page-wrapper">
-        <div id="login-box">
-            <form action="" method="POST">
-                {% csrf_token %}
-                <img id="userpic" src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" alt="Email" width="80px">
-                <!-- email inputbox -->
-                <div>
-                <input id="Email" placeholder="Enter Email" name="email">
-                </div>
-                <!-- password input box -->
-                <input type="password" id="password" placeholder="Enter Password" name="password">
-                <button id="login-btn" type="submit">LOGIN</button>
-                <p id="bottom-text">Not Registered? <a href="/register">Register here<a></p>
-            </form>
-S
-            {% for message in messages %}
-                <p>{{message}}</p>
-            {% endfor %}
-        </div>
+        <form action="" method="POST" id="login-box">
+            {% csrf_token %}
+            <img id="userpic" src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" alt="Email" width="80px">
+            <!-- email inputbox -->
+            <div>
+            <input id="Email" placeholder="Enter Email" name="email">
+            </div>
+            <!-- password input box -->
+            <input type="password" id="password" placeholder="Enter Password" name="password">
+            <button id="login-btn" type="submit">LOGIN</button>
+            <p id="bottom-text">Not Registered? <a href="/register">Register here<a></p>
+        </form>
+
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
     <div>
 </body>
 </html>

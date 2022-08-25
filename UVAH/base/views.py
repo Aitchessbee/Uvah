@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import UserForm
+from .models import Subtopic, Course
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -72,6 +73,7 @@ def submitCourse(request):
 
 def test(request):
     data = User.objects.all()
+    
     context = {"users": data}
 
     return render(request, "base/test.html", context)
