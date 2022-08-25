@@ -1,3 +1,45 @@
-<h1>Profile</h1>
-
-<a href="/logout">Logout</a>
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/profile.css' %}" />
+    <title>Profile</title>
+</head>
+<body>
+    {% include 'base/navbar.html' %}
+    
+    <div class="pagewrapper">
+        <div id="main-heading"><h1>Hi, {User}</h1></div>
+        <div class="email-heading"><h2>Username - mehngi</h2></div>
+        <div class="email-heading"><h2>Email - noob@bbb.com</h2></div>
+        <div class="content-wrapper">
+            <div class="neon-box">
+              <h1>Favourites</h1>
+              dhiuwhwuh<br>
+              efwhjfowihe<br>
+              woejfowfj<br>
+            </div>
+            <div class="neon-box">
+              <h1>Added Courses</h1>
+              dhiuwhwuh<br>
+              efwhjfowihe<br>
+              woejfowfj<br>
+            </div>
+         </div>
+          <div id="buttons">
+            <div class="btn-wrapper" id="change-pwd">
+              <button class="btn">Change Password</button>
+            </div>
+             <div class="btn-wrapper">
+              <button class="btn" id="logout-btn">logout</button>
+            </div>
+          </div>
+              
+       </div>
+    
+</body> 
+</html>
