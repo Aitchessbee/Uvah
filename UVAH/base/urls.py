@@ -9,6 +9,8 @@ urlpatterns = [
     path('backend/', views.backend, name="backend"),
     path('login/', views.user_login, name="login"),
     path('register/', views.user_register, name="register"),
-    path('submit/', views.submit, name="submit"),
-    path('test/', views.test, name="test")
+    path('logout/', views.user_logout, name="logout"),
+    path('submit-course/', views.submitCourse, name="submitCourse"),
+    path('test/', views.test, name="test"),
+    path('profile/', views.profile, name="profile"),
 ]

@@ -5,7 +5,11 @@
     <ul class="navbar-right">
         <li><a href="../projects/projects.html">Projects</a></li>
         <li><a href="../ranking/ranking.html">Ranking</a></li>
-        <li><a href="/submit">Suggest Courses</a></li>
-        <li><a href="/login">Profile</a></li>
+        <li><a href="/submit-course">Suggest Courses</a></li>
+        {% if user.is_authenticated %}
+            <li><a href="/profile">Profile</a></li>
+        {% else %}
+            <li><a href="/login">Login</a></li>
+        {% endif %}
     </ul>
 </nav>
