@@ -1,3 +1,4 @@
+from unicodedata import name
 from django.urls import path
 from . import views
 
@@ -13,4 +14,8 @@ urlpatterns = [
     path('submit-course/', views.submitCourse, name="submitCourse"),
     path('test/', views.test, name="test"),
     path('profile/', views.profile, name="profile"),
+    path('roadmap/<str:domain>/', views.domain, name="domain"),
+    path('roadmap/<str:domain>/<str:topic>/', views.topic, name="topic"),
+    # path('<str:domain>/', views.domain, name="testing"),
+    # path('web/', views.domain, name="web")
 ]

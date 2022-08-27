@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/webdev.css' %}" />
+    <title>Web Development</title>
+</head>
+<body>
+    {% include 'base/navbar.html' %}
+
+    <div class="Pagecontent">
+    <h1>Web Development🌐</h1>
+        <p class="content">Web development refers to the building, creating, and maintaining of websites. It includes aspects such as web design, web publishing, web programming, and database management. It is the creation of an application that works over the internet i.e. websites.
+        </p>
+        <div class="website-container">
+            <div class="buttons-webd">
+                {% for topic in topics %}
+                    <a href="/roadmap/{{domain}}/{{topic}}" class="btn-webd">{{topic}}</a>
+                {% endfor %}
+            </div>
+        <div>
+    </div>
+</body>
+</html>

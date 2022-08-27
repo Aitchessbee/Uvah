@@ -10,7 +10,14 @@ def home(request):
     return redirect('roadmap')
 
 def roadmap(request):
-    return render(request, 'base/home.html')
+    # return render(request, 'base/home.html')
+    domains = list(Subtopic.objects.all().values_list('domain', flat=True).distinct())
+    # print(domains)
+    # for i in domains:
+    #     print(i)
+    context = {"domains": domains}
+
+    return render(request, 'base/roadmap.html', context)
 
 def user_login(request):
     if request.user.is_authenticated:
@@ -54,6 +61,25 @@ def user_register(request):
 def user_logout(request):
     logout(request)
     return redirect("roadmap")
+
+def domain(request, domain):
+    topics = list(Subtopic.objects.filter(domain=domain).values_list('topic', flat=True).distinct())
+
+    context = {"topics": topics, "domain": domain}
+
+    return render(request, 'base/domain.html', context)
+
+def topic(request, domain, topic):
+    subtopics = list(Subtopic.objects.filter(domain=domain, topic=topic).values_list('subtopic', flat=True).distinct())
+    courses = Course.objects.filter(subtopic_id__in=list(Subtopic.objects.filter(topic=topic).values_list('id', flat=True)))
+    # print(courses)
+    # for i in courses:
+    #     print(i.course_author)
+
+    context = {"subtopics": subtopics, "courses": courses}
+
+    return render(request, 'base/topic.html', context)
+
 
 def webdev(request):
     return render(request, 'base/webdev.html')
