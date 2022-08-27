@@ -62,22 +62,27 @@ def user_logout(request):
     logout(request)
     return redirect("roadmap")
 
-def domain(request, domain):
+def domain(request, domain_link):
+    domain = Domain.objects.filter(domain_link=domain_link).first()
+
     topics = Topic.objects.filter(domain=domain)
+    # print(topics)
 
     context = {"topics": topics, "domain": domain}
 
     return render(request, 'base/domain.html', context)
 
-def topic(request, domain, topic):
+def topic(request, domain_link, topic_link):
+    topic=Topic.objects.filter(topic_link=topic_link).first()
+
     subtopics = Subtopic.objects.filter(topic=topic)
     # courses = Course.objects.filter(subtopic_id__in=list(Topic.objects.filter(topic_name=topic).values_list('id', flat=True)))
-    courses = Course.objects.all()
-    # print(courses)
+    courses = Course.objects.filter(subtopic__in=subtopics)
+    print(courses)
     # for i in courses:
     #     print(i.course_author)
 
-    context = {"subtopics": subtopics, "courses": courses}
+    context = {"subtopics": subtopics, "courses": courses, "topic": topic}
 
     return render(request, 'base/topic.html', context)
 

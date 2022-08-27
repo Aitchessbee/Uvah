@@ -13,13 +13,12 @@
     {% include 'base/navbar.html' %}
 
     <div class="Pagecontent">
-    <h1>Web Development🌐</h1>
-        <p class="content">Web development refers to the building, creating, and maintaining of websites. It includes aspects such as web design, web publishing, web programming, and database management. It is the creation of an application that works over the internet i.e. websites.
-        </p>
+    <h1>{{domain.domain_name}}</h1>
+        <p class="content">{{domain.domain_description}}</p>
         <div class="website-container">
             <div class="buttons-webd">
                 {% for topic in topics %}
-                    <a href="/roadmap/{{domain}}/{{topic}}" class="btn-webd">{{topic}}</a>
+                    <a href="/roadmap/{{domain.domain_link}}/{{topic.topic_link}}" class="btn-webd">{{topic.topic_name}}</a>
                 {% endfor %}
             </div>
         <div>

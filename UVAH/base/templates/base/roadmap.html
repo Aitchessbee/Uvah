@@ -23,7 +23,7 @@
     <div id="main">
         <div class="buttons">
             {% for domain in domains %}
-                <a href="/roadmap/{{domain}}" class="btn">{{domain}}</a>
+                <a href="/roadmap/{{domain.domain_link}}" class="btn">{{domain.domain_name}}</a>
             {% endfor %}
         </div>
     </div>

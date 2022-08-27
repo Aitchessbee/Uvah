@@ -16,24 +16,24 @@
     {%  include 'base/navbar.html' %}
     
     <div class="pagecontent">
-        <h1>Frontend 👨‍💻</h1>
-        <p class="page-description">Front-end web development is the development of the graphical user interface of a website, through the use of HTML, CSS, and JavaScript, so that users can view and interact with that website.</p>
+        <h1>{{topic.topic_name}}</h1>
+        <p class="page-description">{{topic.topic_description}}</p>
 
         <div class="subtopics">
             {% for subtopic in subtopics %}
-                <div class="subtopic" data-name={{subtopic|lower}}>{{subtopic}}</div>
+                <div class="subtopic" data-name={{subtopic.subtopic_link}}>{{subtopic.subtopic_name}}</div>
             {% endfor %}
         </div>
 
         <div class="topic-section">
             <ul class="topics">
                 {% for subtopic in subtopics %}
-                    <li class="topic" data-name={{subtopic|lower}}>
-                        <div class="topic-name">{{subtopic}}</div>
-                        <p class="topic-description">HTML is the standard markup language for Web pages. With HTML you can create your own Website.</p>
+                    <li class="topic" data-name={{subtopic.subtopic_link}}>
+                        <div class="topic-name">{{subtopic.subtopic_name}}</div>
+                        <p class="topic-description">{{subtopic.subtopic_description}}</p>
                         <ul class="links">
                             {% for course in courses %}
-                                {% if course.subtopic_id.subtopic == subtopic %}
+                                {% if course.subtopic == subtopic %}
                                     <li>
                                         <div class="link">
                                             <div class="url"><a href="https://{{course.course_link}}">{{course.course_title}}</a> - {{course.course_author}}</div>
