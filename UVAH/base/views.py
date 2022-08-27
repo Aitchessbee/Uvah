@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import UserForm
-from .models import Subtopic, Course
+from .models import Domain, Topic, Subtopic, Course
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -11,7 +11,7 @@ def home(request):
 
 def roadmap(request):
     # return render(request, 'base/home.html')
-    domains = list(Subtopic.objects.all().values_list('domain', flat=True).distinct())
+    domains = Domain.objects.all()
     # print(domains)
     # for i in domains:
     #     print(i)
@@ -63,15 +63,16 @@ def user_logout(request):
     return redirect("roadmap")
 
 def domain(request, domain):
-    topics = list(Subtopic.objects.filter(domain=domain).values_list('topic', flat=True).distinct())
+    topics = Topic.objects.filter(domain=domain)
 
     context = {"topics": topics, "domain": domain}
 
     return render(request, 'base/domain.html', context)
 
 def topic(request, domain, topic):
-    subtopics = list(Subtopic.objects.filter(domain=domain, topic=topic).values_list('subtopic', flat=True).distinct())
-    courses = Course.objects.filter(subtopic_id__in=list(Subtopic.objects.filter(topic=topic).values_list('id', flat=True)))
+    subtopics = Subtopic.objects.filter(topic=topic)
+    # courses = Course.objects.filter(subtopic_id__in=list(Topic.objects.filter(topic_name=topic).values_list('id', flat=True)))
+    courses = Course.objects.all()
     # print(courses)
     # for i in courses:
     #     print(i.course_author)
