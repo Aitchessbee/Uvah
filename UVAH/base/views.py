@@ -1,9 +1,13 @@
+from http.client import HTTPResponse
 from django.shortcuts import render, redirect
 from .forms import UserForm
 from .models import Domain, Topic, Subtopic, Course
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.http import JsonResponse, HttpResponse
+from django.core import serializers
+
 
 # Create your views here.
 def home(request):
@@ -86,6 +90,29 @@ def topic(request, domain_link, topic_link):
 
     return render(request, 'base/topic.html', context)
 
+def get_topics(request):
+    domain = request.GET['domain']
+    print(domain)
+    # topics = Topic.objects.filter(domain=Domain.objects.filter(domain_name=domain).first())
+    topics = Topic.objects.filter(domain=Domain.objects.filter(domain_name=domain).first()).values_list('topic_name', flat=True)
+    print(list(topics))
+    # topics = Topic.objects.filter(domain=domain)
+    # data = serializers.serialize('json', topics)
+    # return HttpResponse(data, content_type='application/json')
+    # return HttpResponse(list(topics), content_type='application/json')
+    # return JsonResponse({"topics": list(topics)})
+    return JsonResponse(list(topics), safe=False)
+    
+def get_subtopics(request):
+    domain_inp = request.GET['domain']
+    topic_inp = request.GET['topic']
+    domain = Domain.objects.filter(domain_name=domain_inp).first()
+    topic = Topic.objects.filter(topic_name=topic_inp).first()
+
+    subtopics = Subtopic.objects.filter(domain=domain, topic=topic).values_list('subtopic_name', flat=True)
+
+    return JsonResponse(list(subtopics), safe=False)
+
 
 def webdev(request):
     return render(request, 'base/webdev.html')
@@ -101,7 +128,13 @@ def profile(request):
     return render(request, 'base/profile.html')
 
 def submitCourse(request):
-    return render(request, 'base/submitCourse.html')
+    domains = Domain.objects.all()
+    topics = Topic.objects.all()
+    subtopics = Subtopic.objects.all()
+
+    context = {"domains": domains, "topics": topics, "subtopics": subtopics}
+
+    return render(request, 'base/submitCourse.html', context)
 
 def test(request):
     data = User.objects.all()

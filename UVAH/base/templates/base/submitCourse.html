@@ -19,27 +19,77 @@
         <div class="submit-box">
             <h1>SUBMIT COURSE</h1>
             <select name="domain" id="domain-drop" class="submit-parameter">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
+                {% for domain in domains %}
+                    <option>{{domain.domain_name}}</option>
+                {% endfor %}
             </select>
             <select name="topic" id="topic-drop" class="submit-parameter">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
+
             </select>
             <select name="subtopic" id="subtopic-drop" class="submit-parameter">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
+
             </select>
             <input type="url" class="submit-parameter" id="courselink" placeholder="Paste URL"/>
             <button class="submit-btn">Submit Course</button>
         </div>
 
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+        let domainDrop = document.getElementById("domain-drop");
+        let topicDrop = document.getElementById("topic-drop")
+        let subtopicDrop = document.getElementById("subtopic-drop");
+
+        getTopics();
+        getSubtopics();
+
+        domainDrop.addEventListener("change", getTopics);
+        topicDrop.addEventListener("change", getSubtopics);
+
+        function getTopics(e){
+            axios.get('/get-topics', {
+                params: {
+                    domain: domainDrop.value,
+                }
+            })
+            .then(res => {
+                console.log(res.data);
+                topicDrop.innerHTML = '';
+
+                for (var i = 0; i < res.data.length; i++) {
+                    var optn = res.data[i];
+                    var el = document.createElement("option");
+                    el.textContent = optn;
+                    el.value = optn;
+                    topicDrop.appendChild(el);
+                }
+
+                getSubtopics()
+            })
+        }
+
+        function getSubtopics(e){
+            axios.get('/get-subtopics', {
+                params: {
+                    domain: domainDrop.value,
+                    topic: topicDrop.value
+                }
+            })
+            .then(res => {
+                console.log(res.data);
+                subtopicDrop.innerHTML = '';
+
+                for (var i = 0; i < res.data.length; i++) {
+                    var optn = res.data[i];
+                    var el = document.createElement("option");
+                    el.textContent = optn;
+                    el.value = optn;
+                    subtopicDrop.appendChild(el);
+            }})
+        }
+
+    </script>
 </body> 
 </html>
