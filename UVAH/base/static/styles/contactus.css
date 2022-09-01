@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap');
+*{
+    font-family: 'Londrina Solid', cursive;
+    color:white;
+    letter-spacing:10px;
+    font-size:60px;
+    margin:0;
+    padding:0;
+    
+}
+.pagewrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height:100vh;
+    width:100vw;
+    background:linear-gradient( rgba(2, 13, 32,0.8), rgba(2, 13, 32,0.8) ),   url('https://images.pexels.com/photos/315191/pexels-photo-315191.jpeg?auto=compress&cs=tinysrgb&w=1600');
+    background-size:cover ;
+}
+
+.content-container{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    background: rgb(61, 59, 89, 0.7);
+    border-radius: 10px;
+    
+}
+.left-box{
+    width: 50%;
+}
+.lbox-margin{
+    margin: 5% 6%;
+}
+.message{
+    font-size: 30px;
+    margin: 0 6%;
+    letter-spacing:0px;
+}
+.right-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+.creator-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* margin: 0 10%; */
+}
+.creator{
+    background: rgb(255,255,255,0.7);
+    width:240px;
+    height: 260px;
+    margin: 0 30px;
+    border-radius: 10px;
+}
+
+.contact-form{
+    background-color: rgb(255,255,255,0.7);
+    height: 80%;
+    width: 70%;
+    border-radius: 10px;
+}
+.contact-form input {
+    letter-spacing:0px;
+    color:black;
+    font-size: 20px;
+    background: rgba(0, 0, 0, 0);
+    border:none;
+    border-bottom: 3px solid black;
+    margin: 15px 0 50px 0;
+    padding: 1px 5px;
+    width: 70%;
+}
+.contact-form textarea {
+    padding: 10px;
+    letter-spacing:0px;
+    color:black;
+    font-size: 20px;
+    background: rgba(0, 0, 0, 0);
+    /* border:none; */
+    border: 3px solid black;
+    border-radius: 10px;
+    resize:none;
+    width: 90% ;
+    height: 100%;
+    margin: 15px 0 10px 0;
+}
+.input-fields{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 10% 10%;
+}
+.formtext{
+    letter-spacing:2px;
+    color: rgba(2, 13, 32,0.8);
+    font-size: 25px;
+}
+.btn-div{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0 10%;
+}
+.msg-btn{
+    background-color: rgb(13, 13, 96);
+    font-size: 20px;
+    letter-spacing: 2px;
+    padding: 2% 5%;
+    border-radius: 10px;
+}
+@media (max-height:1000px) {
+    .contact-form{
+        overflow-x:scroll;
+    }
+}

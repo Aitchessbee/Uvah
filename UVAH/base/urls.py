@@ -12,6 +12,7 @@ urlpatterns = [
     path('register/', views.user_register, name="register"),
     path('logout/', views.user_logout, name="logout"),
     path('submit-course/', views.submitCourse, name="submitCourse"),
+     path('contact-us/', views.contactUs, name="contactUs"),
     path('test/', views.test, name="test"),
     path('profile/', views.profile, name="profile"),
     path('roadmap/<str:domain_link>/', views.domain, name="domain"),
