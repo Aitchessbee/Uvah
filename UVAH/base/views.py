@@ -142,3 +142,6 @@ def test(request):
     context = {"users": data}
 
     return render(request, "base/test.html", context)
+
+def contactUs(request):
+    return render(request, "base/contactus.html")

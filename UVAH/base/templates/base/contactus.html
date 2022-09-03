@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'styles/navbar.css' %}" />
+        <link rel="stylesheet" href="{% static 'styles/contactus.css' %}" />
+        <title>Contact Us</title>
+    </head>
+    <body>
+        {% include 'base/navbar.html' %}
+
+        <div class="pagewrapper">
+            <div class="content-container">
+                <div class="left-box">
+                    <div class="lbox-margin">
+                        <h1>CONTACT CREATORS</h1>
+                    </div>
+                    <div>
+                        <p class="message">
+                            We will try to get back to you as soon as possible
+                        </p>
+                    </div>
+                    <br />
+                    <div class="creator-box">
+                        <div class="creator"></div>
+                        <div class="creator"></div>
+                        <div class="creator"></div>
+                    </div>
+                </div>
+                <div class="right-box">
+                    <div class="contact-form">
+                        <div class="input-fields">
+                            <h5 class="formtext">Your Name:</h5>
+                            <input placeholder="Name" />
+                            <h5 class="formtext">Your Email:</h5>
+                            <input type="email" placeholder="Email" />
+                            <h5 class="formtext">Type a message:</h5>
+                            <textarea
+                                placeholder="your message here"
+                            ></textarea>
+                        </div>
+                        <div class="btn-div">
+                            <button class="msg-btn">Send Message</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
