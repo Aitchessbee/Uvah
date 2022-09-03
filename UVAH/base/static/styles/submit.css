@@ -4,6 +4,12 @@
     margin:0;
     padding:0;
 }
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
 body{
     font-family: 'Silkscreen', cursive;
     background: linear-gradient(rgba(14, 19, 8, 0.95),rgb(0,0,0,0.95)), url('https://images.pexels.com/photos/1089455/pexels-photo-1089455.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
@@ -34,19 +40,70 @@ body{
     font-size: 300%;
 }
 .submit-parameter{
-    width: 50%;
+    width: 60%;
     height:8%;
     margin: 20px 0;
-    border: solid 2px rgb(17, 28, 17)
+    padding: 0 10px; 
+    border: solid 2px rgb(17, 28, 17);
+    border-radius: 4px;
+    background-color: rgba(172, 255, 47, 0) ;
+    color: aliceblue;
+    border: solid 2px greenyellow;
+}
+.submit-parameter:focus{
+    width: 60%;
+    height:8%;
+    margin: 20px 0;
+    padding: 0 10px; 
+    border: solid 2px rgb(17, 28, 17);
+    border-radius: 4px;
+    background-color: rgba(172, 255, 47, 0) ;
+    color: aliceblue;
+    border: solid 2px greenyellow;
 }
 .submit-btn{
+    background-color: rgba(172, 255, 47, 0.101) ;
+    color: aliceblue;
+    margin: 10px 0;
     padding: 5px 10px;
     border-radius: 10px;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
+    border: solid 2px greenyellow;
+    transition: box-shadow 0.3s;
+}
+.submit-btn:hover{
+    background-color: rgba(172, 255, 47, 0.101) ;
+    color: aliceblue;
+    margin: 10px 0;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    border: solid 2px greenyellow;
+    cursor: pointer;
+    box-shadow: 0 0 10px 4px rgb(207, 241, 13);
 }
 #courselink{
-    padding: 0 10px; 
-    border-radius: 8px;
+    width: 56%;
+    height:8%;
+    border-radius: 5px;
     border: solid 2px black;
+    margin: 20px 0;
+    padding: 0 10px; 
+    background-color: rgba(172, 255, 47, 0) ;
+    color: aliceblue;
+    border: solid 2px greenyellow;
+}
+#courselink:focus{
+    width: 56%;
+    height:8%;
+    border-radius: 5px;
+    border: solid 2px black;
+    margin: 20px 0;
+    padding: 0 10px; 
+    background-color: rgba(172, 255, 47, 0) ;
+    color: aliceblue;
+    border: solid 2px greenyellow;
+
 }
