@@ -107,7 +107,7 @@ def get_subtopics(request):
     domain_inp = request.GET['domain']
     topic_inp = request.GET['topic']
     domain = Domain.objects.filter(domain_name=domain_inp).first()
-    topic = Topic.objects.filter(topic_name=topic_inp).first()
+    topic = Topic.objects.filter(topic_name=topic_inp, domain=domain).first()
 
     subtopics = Subtopic.objects.filter(domain=domain, topic=topic).values_list('subtopic_name', flat=True)
 
@@ -131,6 +131,27 @@ def submitCourse(request):
     domains = Domain.objects.all()
     topics = Topic.objects.all()
     subtopics = Subtopic.objects.all()
+
+    if request.method == "POST":
+        course_title = request.POST.get('course-title')
+        course_author = request.POST.get('course-author')
+        course_link = request.POST.get('course-link')
+
+        domain_name = request.POST.get('domain')
+        domain = Domain.objects.filter(domain_name=domain_name).first()
+
+        topic_name = request.POST.get('topic')
+        topic = Topic.objects.filter(topic_name=topic_name).first()
+
+        subtopic_name = request.POST.get('subtopic')
+        subtopic = Subtopic.objects.filter(subtopic_name=subtopic_name, domain=domain, topic=topic).first()
+
+        Course.objects.create(
+            subtopic = subtopic,
+            course_title = course_title,
+            course_author = course_author,
+            course_link = course_link
+        )
 
     context = {"domains": domains, "topics": topics, "subtopics": subtopics}
 
