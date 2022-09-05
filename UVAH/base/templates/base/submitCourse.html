@@ -16,7 +16,9 @@
     {%  include 'base/navbar.html' %}
     <div class="page-wrapper">
 
-        <div class="submit-box">
+        <form action="" method="POST" id="submit-box">
+            {% csrf_token %}
+
             <h1>SUBMIT COURSE</h1>
             <select name="domain" id="domain-drop" class="submit-parameter">
                 {% for domain in domains %}
@@ -29,9 +31,12 @@
             <select name="subtopic" id="subtopic-drop" class="submit-parameter">
 
             </select>
-            <input type="url" class="submit-parameter" id="courselink" placeholder="Paste URL"/>
+            <input class="submit-parameter" id="course-title" name="course-title" placeholder="Course Title"/>
+            <input class="submit-parameter" id="course-author" name="course-author" placeholder="Course Author"/>
+            <input type="url" class="submit-parameter" id="course-link" name="course-link" placeholder="Course Link"/>
+
             <button class="submit-btn">Submit Course</button>
-        </div>
+        </form>
 
     </div>
 
