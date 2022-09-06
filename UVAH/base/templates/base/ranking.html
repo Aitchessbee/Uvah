@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'styles/navbar.css' %}" />
+        <link rel="stylesheet" href="{% static 'styles/ranking.css' %}" />
+        <title>Contact Us</title>
+    </head>
+    <body>
+        {% include 'base/navbar.html' %}
+        
+        <div class="page-wrapper">
+            <h1 class="page-heading">Leaderboard</h1>
+            <div class="ranking-box">
+                <div class="heading-box"><div class="rank"><h3>Rank</h3></div><div class="username"><h3>username</h3></div><div class="subCount"><h3>Courses submitted</h3></div></div>
+    
+                <!-- The div below this comment is the rank template isme django magic kar -->
+                <div class="user-box"><div class="rank-user"><h3>1.</h3></div><div class="username"><h3>Ishkant</h3></div><div class="subCount"><h3>0</h3></div></div>
+                <!-- iske aage mat jaana -->
+    
+            </div>
+    
+        </div>
+        
+    </body>
+</html>
