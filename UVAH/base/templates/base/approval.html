@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'styles/navbar.css' %}" />
+        <link rel="stylesheet" href="{% static 'approval/ranking.css' %}" />
+        <title>Contact Us</title>
+    </head>
+    <body>
+        {% include 'base/navbar.html' %}
+        
+        <div class="page-wrapper">
+            <div class="content-container">
+                <h1 class="content-heading">Pending Approvals</h1>
+
+                <!-- ye neeche waala template hai -->
+                <div class="course-approval">
+                    <iframe
+                        src="https://tube.rvere.com/embed?v=qz0aGYrrlhU"
+                        frameborder="0"
+                        class="frame"
+                    ></iframe>
+                    <div class="username-and-btn">
+                        <h3>@username</h3>
+                        <div>
+                            <button class="approve-btn">Approve</button>
+                            <button class="decline-btn">Decline</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- yahi ruk bedi aage mat jaa XD -->
+            </div>
+        </div>
+        
+    </body>
+</html>
