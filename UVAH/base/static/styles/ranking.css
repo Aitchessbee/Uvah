@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Silkscreen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+*{
+    margin:0;
+    padding:0;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+body{
+    font-family: 'Silkscreen', cursive;
+    background: linear-gradient(rgba(14, 19, 8, 0.95),rgb(0,0,0,0.95)), url('https://images.pexels.com/photos/1089455/pexels-photo-1089455.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    color: aliceblue;
+}
+.page-wrapper{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+}
+.page-heading{
+    font-size: 600%;
+    margin-bottom: 2%;
+}
+.ranking-box{
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 80%;
+
+    background: linear-gradient(rgba(172, 255, 47, 0.101),rgba(255, 255, 255, 0.078));
+    border: solid 2px greenyellow;
+    border-radius: 5px; 
+}
+.user-box{
+    display: flex;
+    flex-direction: row;
+    font-size: 200%;
+    width: 90%;
+    background-color: rgba(165, 232, 138, 0.08);
+    border-radius: 10px;
+    padding: 1% 10px;
+    margin: 0.5% 0;
+}
+.heading-box{
+    display: flex;
+    flex-direction: row;
+    font-size: 200%;
+    width: 90%;
+    /* background-color: rgba(165, 232, 138, 0.08); */
+    border-radius: 10px;
+    padding: 1% 10px;
+    margin: 0.5% 0;
+}
+.ranking-box h1{
+    color: white;
+    font-size: 300%;
+    
+}
+.rank{
+    
+    width:20%
+}
+.rank-user{
+    padding-left: 1%;
+    width:20%
+}
+.username{
+    width: 40%;
+    text-align: center;
+}
+.subCount{
+    width: 40%;
+    text-align: center;
+}
