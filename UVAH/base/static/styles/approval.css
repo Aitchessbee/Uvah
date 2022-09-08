@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap');
+*{
+    font-family: 'Roboto Mono', monospace;
+    color:white;
+    margin:0;
+    padding:0;
+    
+}
+.content-heading{
+    font-size: 100px;
+    font-family: 'Londrina Solid', cursive;
+    letter-spacing: 10px;
+    margin: 10px 0 50px 0;
+}
+.page-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height:100vh;
+    width:100vw;
+    background:linear-gradient( rgba(2, 13, 32,0.8), rgba(2, 13, 32,0.8) ),   url('https://images.pexels.com/photos/315191/pexels-photo-315191.jpeg?auto=compress&cs=tinysrgb&w=1600');
+    background-size:cover ;
+}
+.content-container{
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    width: 80%;
+    min-height: 80%;
+    background: rgb(61, 59, 89, 0.7);
+    border-radius: 10px;
+    padding: 1%;
+    text-align: center;
+}
+.course-approval{
+    display: flex;
+    margin: 40px 20px;
+}
+.frame{
+    width:800px;
+    height: 400px;
+}
+
+.username-and-btn{
+    font-size: 30px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.approve-btn{
+    background: green;
+    border-radius: 5px;
+    border: solid 0px;
+    padding: 5px;
+    font-size: 20px;
+}
+.approve-btn:hover{
+    background: rgb(215, 229, 18);
+    border-radius: 5px;
+    border: solid 0px;
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.decline-btn{
+    background: red;
+    border-radius: 5px;
+    border: solid 0px;
+    padding: 5px;
+    font-size: 20px;   
+}
+.decline-btn:hover{
+    background: rgb(255, 150, 23);
+    border-radius: 5px;
+    border: solid 0px;
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;    
+}
