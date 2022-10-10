@@ -1,38 +1,79 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="{% static 'styles/navbar.css' %}" />
-        <link rel="stylesheet" href="{% static 'approval/ranking.css' %}" />
-        <title>Contact Us</title>
+        <link rel="stylesheet" href="{% static 'styles/approval.css' %}" />
+        <title>Course Approval</title>
     </head>
     <body>
         {% include 'base/navbar.html' %}
+        
         
         <div class="page-wrapper">
             <div class="content-container">
                 <h1 class="content-heading">Pending Approvals</h1>
 
-                <!-- ye neeche waala template hai -->
-                <div class="course-approval">
-                    <iframe
-                        src="https://tube.rvere.com/embed?v=qz0aGYrrlhU"
-                        frameborder="0"
-                        class="frame"
-                    ></iframe>
-                    <div class="username-and-btn">
-                        <h3>@username</h3>
-                        <div>
-                            <button class="approve-btn">Approve</button>
-                            <button class="decline-btn">Decline</button>
+                {% for course in unapproved_courses %}
+                    <div class="course-approval">
+                        <iframe
+                            src="https://tube.rvere.com/embed?v=qz0aGYrrlhU"
+                            frameborder="0"
+                            class="frame"
+                        ></iframe>
+                        <div class="username-and-btn">
+                            <!-- <h4>{{course.course_title}}</h4> -->
+                            <h4>{{course.id}}</h4>
+                            <h5>{{course.course_author}}</h5>
+                            <a href={{course.course_link}}>{{course.course_link}}</a>
+                            <div>
+                                <button class="approve-btn" data-id={{course.id}}>Approve</button>
+                                <button class="decline-btn" data-id={{course.id}}>Decline</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- yahi ruk bedi aage mat jaa XD -->
+                {% endfor %}
+                
             </div>
         </div>
-        
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        <script>
+            axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
+            axios.defaults.xsrfCookieName = "csrftoken"
+
+
+            // let courses = "{% for course in unapproved_courses %} {{course.id}} {% endfor %}"
+            // console.log(courses)
+
+            let approveBtn = document.getElementsByClassName("approve-btn")
+            // let declineBtn = document.getElementById("decline")
+
+            for(let i=0; i<approveBtn.length; i++){
+                approveBtn[i].addEventListener("click", approveCourse)
+            }
+
+            // approveBtn.addEventListener("click", approveCourse)
+            // declineBtn.addEventListener(declineCourse)
+
+            function approveCourse(e){
+                console.log(e.target.dataset.id)
+                axios.post('/course-approval/', 
+                {
+                    course_id: e.target.dataset.id
+                }
+                )
+            }
+
+            // function declineCourse(){
+
+            // }
+
+
+        </script>
     </body>
 </html>

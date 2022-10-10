@@ -18,7 +18,9 @@ urlpatterns = [
     path('roadmap/<str:domain_link>/', views.domain, name="domain"),
     path('roadmap/<str:domain_link>/<str:topic_link>/', views.topic, name="topic"),
     path('get-topics/', views.get_topics, name="get-topics"),
-    path('get-subtopics/', views.get_subtopics, name="get-subtopics")
+    path('get-subtopics/', views.get_subtopics, name="get-subtopics"),
+    path('leaderboard/', views.leaderboard, name="leaderboard"),
+    path('course-approval/', views.course_approval, name="course-approval")
     # path('<str:domain>/', views.domain, name="testing"),
     # path('web/', views.domain, name="web")
 ]

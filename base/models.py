@@ -25,3 +25,5 @@ class Course(models.Model):
     course_author = models.CharField(max_length=200)
     course_link = models.URLField(max_length=200)
     course_rating = models.IntegerField(null=True, blank=True)
+    approved = models.BooleanField(default=False)
+    # submitted_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)

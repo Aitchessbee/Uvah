@@ -54,6 +54,9 @@
         topicDrop.addEventListener("change", getSubtopics);
 
         function getTopics(e){
+            axios.defaults.xsrfCookieName = 'csrftoken'
+            axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
+            
             axios.get('/get-topics', {
                 params: {
                     domain: domainDrop.value,

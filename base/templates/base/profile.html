@@ -13,9 +13,9 @@
     {% include 'base/navbar.html' %}
     
     <div class="pagewrapper">
-        <div id="main-heading"><h1>Hi, {User}</h1></div>
-        <div class="email-heading"><h2>Username - mehngi</h2></div>
-        <div class="email-heading"><h2>Email - noob@bbb.com</h2></div>
+        <div id="main-heading"><h1>Hi, {{user}}</h1></div>
+        <div class="email-heading"><h2>Username - {{user}}</h2></div>
+        <div class="email-heading"><h2>Email - {{user.email}}</h2></div>
         <div class="content-wrapper">
             <div class="neon-box">
               <h1>Favourites</h1>
@@ -24,7 +24,7 @@
               woejfowfj<br>
             </div>
             <div class="neon-box">
-              <h1>Added Courses</h1>
+              <h1>Your Suggested Courses</h1>
               dhiuwhwuh<br>
               efwhjfowihe<br>
               woejfowfj<br>
@@ -32,10 +32,10 @@
          </div>
           <div id="buttons">
             <div class="btn-wrapper" id="change-pwd">
-              <button class="btn">Change Password</button>
+              <button class="btn">Edit Profile</button>
             </div>
              <div class="btn-wrapper">
-              <button class="btn" id="logout-btn">logout</button>
+              <a href="/logout" class="btn" id="logout-btn">logout</a href="/logout">
             </div>
           </div>
               

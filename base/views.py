@@ -1,4 +1,5 @@
 from http.client import HTTPResponse
+import json
 from django.shortcuts import render, redirect
 from .forms import UserForm
 from .models import Domain, Topic, Subtopic, Course
@@ -124,7 +125,9 @@ def backend(request):
     return render(request, 'base/backend.html')
 
 def profile(request):
+    user = request.user
 
+    context = {"user": user}
     return render(request, 'base/profile.html')
 
 def submitCourse(request):
@@ -166,3 +169,26 @@ def test(request):
 
 def contactUs(request):
     return render(request, "base/contactus.html")
+
+def leaderboard(request):
+    return render(request, "base/ranking.html")
+
+def course_approval(request):
+    if request.user.is_superuser == False:
+        return redirect("roadmap")
+
+    if request.method == "POST":
+        body_unicode = request.body.decode('utf-8')
+        body = json.loads(body_unicode)
+        print(body["course_id"])
+
+    
+    
+
+    unapproved_courses = Course.objects.filter(approved=False)
+
+    context = {"unapproved_courses": unapproved_courses}
+
+    
+    return render(request, "base/approval.html", context)
+
