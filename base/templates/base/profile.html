@@ -13,8 +13,8 @@
     {% include 'base/navbar.html' %}
     
     <div class="pagewrapper">
-        <div id="main-heading"><h1>Hi, {{user}}</h1></div>
-        <div class="email-heading"><h2>Username - {{user}}</h2></div>
+        <div id="main-heading"><h1>Hi, {{user.username}}</h1></div>
+        <div class="email-heading"><h2>Username - {{user.username}}</h2></div>
         <div class="email-heading"><h2>Email - {{user.email}}</h2></div>
         <div class="content-wrapper">
             <div class="neon-box">
@@ -25,9 +25,14 @@
             </div>
             <div class="neon-box">
               <h1>Your Suggested Courses</h1>
-              dhiuwhwuh<br>
-              efwhjfowihe<br>
-              woejfowfj<br>
+              
+              {% for course in courses %}
+                <div class="course">
+                  <div>{{ course.course_title }}</div>
+                  <div>{{ course.course_author }}</div>
+                  <div><a href={{ course.course_link }}>{{ course.course_link }}</a></div>
+                </div>
+              {% endfor %}
             </div>
          </div>
           <div id="buttons">

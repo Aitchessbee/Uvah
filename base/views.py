@@ -128,8 +128,10 @@ def backend(request):
 def profile(request):
     user = request.user
 
-    context = {"user": user}
-    return render(request, 'base/profile.html')
+    suggested_courses = Course.objects.filter(submitted_by=user)
+
+    context = {"user": user, "courses": suggested_courses}
+    return render(request, 'base/profile.html', context)
 
 def submitCourse(request):
     domains = Domain.objects.all()
