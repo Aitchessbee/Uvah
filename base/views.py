@@ -189,6 +189,11 @@ def course_approval(request):
             course = Course.objects.get(id=body["course_id"])
             course.approved = True
             course.save()
+
+            user = course.submitted_by
+            user.courses_submitted = user.courses_submitted + 1
+            user.save()
+
         else:
             course = Course.objects.get(id=body["course_id"])
             course.delete()

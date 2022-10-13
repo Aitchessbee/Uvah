@@ -16,11 +16,17 @@ class Domain(models.Model):
     domain_description = models.TextField(null=True)
     domain_link = models.CharField(max_length=200)
 
+    def __str__(self):
+        return self.domain_name
+
 class Topic(models.Model):
     domain = models.ForeignKey(Domain, on_delete=models.SET_NULL, null=True)
     topic_name = models.CharField(max_length=200)
     topic_description = models.TextField(null=True)
     topic_link = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.topic_name
 
 class Subtopic(models.Model):
     domain = models.ForeignKey(Domain, on_delete=models.SET_NULL, null=True)
@@ -28,6 +34,9 @@ class Subtopic(models.Model):
     subtopic_name = models.CharField(max_length=200)
     subtopic_description = models.TextField(null=True)
     subtopic_link = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.subtopic_name
 
 class Course(models.Model):
     submitted_by = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True)
@@ -37,4 +46,7 @@ class Course(models.Model):
     course_link = models.URLField(max_length=200)
     course_rating = models.IntegerField(null=True, blank=True)
     approved = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.course_title
     # submitted_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
