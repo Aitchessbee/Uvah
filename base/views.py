@@ -82,7 +82,7 @@ def topic(request, domain_link, topic_link):
 
     subtopics = Subtopic.objects.filter(topic=topic)
     # courses = Course.objects.filter(subtopic_id__in=list(Topic.objects.filter(topic_name=topic).values_list('id', flat=True)))
-    courses = Course.objects.filter(subtopic__in=subtopics)
+    courses = Course.objects.filter(subtopic__in=subtopics, approved=True)
     print(courses)
     # for i in courses:
     #     print(i.course_author)
@@ -136,6 +136,8 @@ def submitCourse(request):
     subtopics = Subtopic.objects.all()
 
     if request.method == "POST":
+        user = request.user
+
         course_title = request.POST.get('course-title')
         course_author = request.POST.get('course-author')
         course_link = request.POST.get('course-link')
@@ -150,6 +152,7 @@ def submitCourse(request):
         subtopic = Subtopic.objects.filter(subtopic_name=subtopic_name, domain=domain, topic=topic).first()
 
         Course.objects.create(
+            submitted_by = user,
             subtopic = subtopic,
             course_title = course_title,
             course_author = course_author,
@@ -182,8 +185,14 @@ def course_approval(request):
         body = json.loads(body_unicode)
         print(body["course_id"])
 
-    
-    
+        if(body["action"] == "approve"):
+            course = Course.objects.get(id=body["course_id"])
+            course.approved = True
+            course.save()
+        else:
+            course = Course.objects.get(id=body["course_id"])
+            course.delete()
+
 
     unapproved_courses = Course.objects.filter(approved=False)
 

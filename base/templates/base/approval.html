@@ -51,10 +51,14 @@
             // console.log(courses)
 
             let approveBtn = document.getElementsByClassName("approve-btn")
-            // let declineBtn = document.getElementById("decline")
+            let declineBtn = document.getElementsByClassName("decline-btn")
 
             for(let i=0; i<approveBtn.length; i++){
                 approveBtn[i].addEventListener("click", approveCourse)
+            }
+
+            for(let i=0; i<declineBtn.length; i++){
+                declineBtn[i].addEventListener("click", declineCourse)
             }
 
             // approveBtn.addEventListener("click", approveCourse)
@@ -63,15 +67,27 @@
             function approveCourse(e){
                 console.log(e.target.dataset.id)
                 axios.post('/course-approval/', 
-                {
-                    course_id: e.target.dataset.id
-                }
+                    {
+                        action: "approve",
+                        course_id: e.target.dataset.id
+                    }
                 )
+                .then(res => {
+                    e.target.parentElement.parentElement.parentElement.remove()
+                })
             }
 
-            // function declineCourse(){
-
-            // }
+            function declineCourse(e){
+                axios.post('/course-approval/', 
+                    {
+                        action: "decline",
+                        course_id: e.target.dataset.id
+                    }
+                )
+                .then(res => {
+                    e.target.parentElement.parentElement.parentElement.remove()
+                })
+            }
 
 
         </script>

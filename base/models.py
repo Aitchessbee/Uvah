@@ -1,6 +1,16 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
+from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
+class CustomUser(AbstractUser):
+    email = models.EmailField(_('email address'), unique=True)
+    courses_submitted = models.IntegerField("courses_submitted", null=True, default=0)
+
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = ["username"]
+
+
 class Domain(models.Model):
     domain_name = models.CharField(max_length=200)
     domain_description = models.TextField(null=True)
@@ -20,6 +30,7 @@ class Subtopic(models.Model):
     subtopic_link = models.CharField(max_length=200)
 
 class Course(models.Model):
+    submitted_by = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True)
     subtopic = models.ForeignKey(Subtopic, on_delete=models.SET_NULL, null=True)
     course_title = models.CharField(max_length=200)
     course_author = models.CharField(max_length=200)
