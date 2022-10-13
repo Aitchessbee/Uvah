@@ -2,12 +2,13 @@ from http.client import HTTPResponse
 import json
 from django.shortcuts import render, redirect
 from .forms import UserForm
-from .models import Domain, Topic, Subtopic, Course
+from .models import CustomUser, Domain, Topic, Subtopic, Course
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.http import JsonResponse, HttpResponse
-from django.core import serializers
+# from django.core import serializers
+# from django.db.models import Q
 
 
 # Create your views here.
@@ -174,7 +175,14 @@ def contactUs(request):
     return render(request, "base/contactus.html")
 
 def leaderboard(request):
-    return render(request, "base/ranking.html")
+    users = CustomUser.objects.filter(courses_submitted__gte=1).order_by('-courses_submitted', "username")
+    # print(users)
+    
+    context = {
+        "users": users,
+    }
+
+    return render(request, "base/ranking.html", context)
 
 def course_approval(request):
     if request.user.is_superuser == False:

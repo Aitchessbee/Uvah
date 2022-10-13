@@ -11,19 +11,28 @@
     </head>
     <body>
         {% include 'base/navbar.html' %}
-        
+
         <div class="page-wrapper">
             <h1 class="page-heading">Leaderboard</h1>
             <div class="ranking-box">
-                <div class="heading-box"><div class="rank"><h3>Rank</h3></div><div class="username"><h3>username</h3></div><div class="subCount"><h3>Courses submitted</h3></div></div>
-    
+                <div class="heading-box">
+                    <div class="rank"><h3>Rank</h3></div>
+                    <div class="username"><h3>username</h3></div>
+                    <div class="subCount"><h3>Courses submitted</h3></div>
+                </div>
+
                 <!-- The div below this comment is the rank template isme django magic kar -->
-                <div class="user-box"><div class="rank-user"><h3>1.</h3></div><div class="username"><h3>Ishkant</h3></div><div class="subCount"><h3>0</h3></div></div>
+                {% for user in users %}
+
+                    <div class="user-box">
+                        <div class="rank-user"><h3>{{ forloop.counter }}.</h3></div>
+                        <div class="username"><h3>{{ user.username }}</h3></div>
+                        <div class="subCount"><h3>{{ user.courses_submitted }}</h3></div>
+                    </div>
+
+                {% endfor %}
                 <!-- iske aage mat jaana -->
-    
             </div>
-    
         </div>
-        
     </body>
 </html>
