@@ -156,8 +156,9 @@ def profile(request):
     user = request.user
 
     suggested_courses = Course.objects.filter(submitted_by=user)
+    favorite_courses = user.favorite_courses.all()
 
-    context = {"user": user, "courses": suggested_courses}
+    context = {"user": user, "courses": suggested_courses, "favorite_courses": favorite_courses}
     return render(request, 'base/profile.html', context)
 
 def submitCourse(request):

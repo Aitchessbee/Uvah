@@ -36,7 +36,7 @@
                             <li>
                                 <div class="link">
                                     <div class="course-top-section">
-                                        <div class="url"><a href="https://{{course.course_link}}">{{course.course_title}}</a> - {{course.course_author}}</div>
+                                        <div class="url"><a href={{ course.course_link }} target="_blank">{{course.course_title}}</a> - {{course.course_author}}</div>
                                         {% if course in favorite_courses %}
                                             <i class="fa-regular fa-bookmark bookmarked" data-id={{course.id}}></i>
                                         {% else %}

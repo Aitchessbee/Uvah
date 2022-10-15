@@ -18,10 +18,15 @@
         <div class="email-heading"><h2>Email - {{user.email}}</h2></div>
         <div class="content-wrapper">
             <div class="neon-box">
-              <h1>Favourites</h1>
-              dhiuwhwuh<br>
-              efwhjfowihe<br>
-              woejfowfj<br>
+              <h1>Your Bookmarked Courses</h1>
+
+              {% for course in favorite_courses %}
+                <div class="course">
+                  <div>{{ course.course_title }}</div>
+                  <div>{{ course.course_author }}</div>
+                  <div><a href={{ course.course_link }} target="_blank">{{ course.course_link }}</a></div>
+                </div>
+              {% endfor %}
             </div>
             <div class="neon-box">
               <h1>Your Suggested Courses</h1>
@@ -30,7 +35,7 @@
                 <div class="course">
                   <div>{{ course.course_title }}</div>
                   <div>{{ course.course_author }}</div>
-                  <div><a href={{ course.course_link }}>{{ course.course_link }}</a></div>
+                  <div><a href={{ course.course_link }} target="_blank">{{ course.course_link }}</a></div>
                 </div>
               {% endfor %}
             </div>
