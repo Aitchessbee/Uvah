@@ -79,16 +79,43 @@ def domain(request, domain_link):
     return render(request, 'base/domain.html', context)
 
 def topic(request, domain_link, topic_link):
+    if request.method == "POST":
+        print("request received")
+
+        user = request.user
+
+        body_unicode = request.body.decode('utf-8')
+        body = json.loads(body_unicode)
+        # print(body["course_id"])
+
+        course = Course.objects.get(id=body["course_id"])
+    
+        print(body["action"])
+
+        if body["action"] == "addBookmark":
+            user.favorite_courses.add(course)
+        else:
+            user.favorite_courses.remove(course)
+
+        user.save()
+
+        return HttpResponse(status=200) 
+        
+
     topic=Topic.objects.filter(topic_link=topic_link).first()
 
     subtopics = Subtopic.objects.filter(topic=topic)
     # courses = Course.objects.filter(subtopic_id__in=list(Topic.objects.filter(topic_name=topic).values_list('id', flat=True)))
     courses = Course.objects.filter(subtopic__in=subtopics, approved=True)
-    print(courses)
+    favorite_courses = request.user.favorite_courses.filter(subtopic__in=subtopics)
+
+    print(favorite_courses)
+
+    # print(courses)
     # for i in courses:
     #     print(i.course_author)
 
-    context = {"subtopics": subtopics, "courses": courses, "topic": topic}
+    context = {"subtopics": subtopics, "courses": courses, "topic": topic, "favorite_courses": favorite_courses}
 
     return render(request, 'base/topic.html', context)
 
@@ -193,9 +220,9 @@ def course_approval(request):
     if request.method == "POST":
         body_unicode = request.body.decode('utf-8')
         body = json.loads(body_unicode)
-        print(body["course_id"])
+        # print(body["course_id"])
 
-        if(body["action"] == "approve"):
+        if body["action"] == "approve":
             course = Course.objects.get(id=body["course_id"])
             course.approved = True
             course.save()

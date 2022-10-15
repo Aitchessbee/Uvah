@@ -1,61 +1,109 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'styles/navbar.css' %}">
-    <link rel="stylesheet" href="{% static 'styles/frontend.css' %}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-    <script src="{% static 'js/script.js' %}"></script>
-    
-    <title>Frontend</title>
-</head>
-<body>
-    {%  include 'base/navbar.html' %}
-    
-    <div class="pagecontent">
-        <h1>{{topic.topic_name}}</h1>
-        <p class="page-description">{{topic.topic_description}}</p>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'styles/navbar.css' %}" />
+        <link rel="stylesheet" href="{% static 'styles/topic.css' %}" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+        <!-- <script src="{% static 'js/script.js' %}"></script> -->
 
-        <div class="subtopics">
-            {% for subtopic in subtopics %}
-                <div class="subtopic" data-name={{subtopic.subtopic_link}}>{{subtopic.subtopic_name}}</div>
-            {% endfor %}
-        </div>
+        <title>Frontend</title>
+    </head>
+    <body>
+        {% include 'base/navbar.html' %}
 
-        <div class="topic-section">
-            <ul class="topics">
+        <div class="pagecontent">
+            <h1>{{topic.topic_name}}</h1>
+            <p class="page-description">{{topic.topic_description}}</p>
+
+            <div class="subtopics">
                 {% for subtopic in subtopics %}
-                    <li class="topic" data-name={{subtopic.subtopic_link}}>
+                <div class="subtopic" data-name="{{subtopic.subtopic_link}}">{{subtopic.subtopic_name}}</div>
+                {% endfor %}
+            </div>
+
+            <div class="topic-section">
+                <ul class="topics">
+                    {% for subtopic in subtopics %}
+                    <li class="topic" data-name="{{subtopic.subtopic_link}}">
                         <div class="topic-name">{{subtopic.subtopic_name}}</div>
                         <p class="topic-description">{{subtopic.subtopic_description}}</p>
                         <ul class="links">
-                            {% for course in courses %}
-                                {% if course.subtopic == subtopic %}
-                                    <li>
-                                        <div class="link">
-                                            <div class="url"><a href="https://{{course.course_link}}">{{course.course_title}}</a> - {{course.course_author}}</div>
-                                            <div class="rating-flex">
-                                                <div class="rate-number">1</div>
-                                                <div class="rate-number">2</div>
-                                                <div class="rate-number">3</div>
-                                                <div class="rate-number">4</div>
-                                                <div class="rate-number">5</div>
-                                            </div>
-                                        </div>
-                                        <iframe src="https://tube.rvere.com/embed?v=qz0aGYrrlhU" frameborder="0" class="frame"></iframe>
-                                    </li>
-                                {% endif %}
-                            {% endfor %}
- 
+                            {% for course in courses %} {% if course.subtopic == subtopic %}
+                            <li>
+                                <div class="link">
+                                    <div class="course-top-section">
+                                        <div class="url"><a href="https://{{course.course_link}}">{{course.course_title}}</a> - {{course.course_author}}</div>
+                                        {% if course in favorite_courses %}
+                                            <i class="fa-regular fa-bookmark bookmarked" data-id={{course.id}}></i>
+                                        {% else %}
+                                            <i class="fa-regular fa-bookmark" data-id={{course.id}}></i>
+                                        {% endif %}
+                                    </div>
+                                    <div class="rating-flex">
+                                        <div class="rate-number">1</div>
+                                        <div class="rate-number">2</div>
+                                        <div class="rate-number">3</div>
+                                        <div class="rate-number">4</div>
+                                        <div class="rate-number">5</div>
+                                    </div>
+                                </div>
+                                <iframe src="https://tube.rvere.com/embed?v=qz0aGYrrlhU" frameborder="0" class="frame"></iframe>
+                            </li>
+                            {% endif %} {% endfor %}
                         </ul>
                     </li>
-                {% endfor %}
-            </ul>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
-    </div>
-    <script src="{% static 'js/subtopics.js' %}"></script>
-</body> 
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="{% static 'js/subtopics.js' %}"></script>
+        <script>
+            axios.defaults.xsrfHeaderName = "X-CSRFTOKEN"
+            axios.defaults.xsrfCookieName = "csrftoken"
+
+            const bookmarkBtn = document.getElementsByClassName("fa-bookmark")
+            
+            const addBookmark = async (e) => {
+                console.log("adding")
+                const res = await axios.post("", {
+                    action: "addBookmark",
+                    course_id: e.target.dataset.id,
+                });
+                console.log(res)
+
+                e.target.classList.add("bookmarked")
+                e.target.removeEventListener("click", addBookmark)
+                e.target.addEventListener("click", removeBookmark)
+            }
+
+            const removeBookmark = async (e) => {
+                console.log("removing")
+                const res = await axios.post("", {
+                    action: "removeBookmark",
+                    course_id: e.target.dataset.id,
+                });
+                console.log(res)
+
+                e.target.classList.remove("bookmarked")
+                e.target.removeEventListener("click", removeBookmark)
+                e.target.addEventListener("click", addBookmark)
+            }
+
+            for(let i=0; i<bookmarkBtn.length; i++){
+                if(bookmarkBtn[i].classList.contains("bookmarked")){
+                    bookmarkBtn[i].addEventListener("click", removeBookmark)
+                } else {
+                    bookmarkBtn[i].addEventListener("click", addBookmark)
+                }
+
+            }
+
+            
+        </script>
+    </body>
 </html>

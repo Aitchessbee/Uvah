@@ -24,6 +24,13 @@ h1 {
     margin: 40px 0;
 }
 
+.course-top-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 30px;
+}
+
 .subtopics {
     display: flex;
     justify-content: center;
@@ -113,7 +120,22 @@ h1 {
     margin-top: 2vw;
     font-size: 2vw;
     text-align: center;
-    width: 100%;
+    width: 80%;
+}
+
+.fa-bookmark {
+    font-size: 30px;
+    color: white; 
+    /* background-color: #02d9df; */
+    /* stroke: white; */
+}
+
+.fa-bookmark:hover {
+    color: gold;
+}
+
+.bookmarked {
+    color: gold;
 }
 
 .url a {

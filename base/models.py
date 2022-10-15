@@ -3,9 +3,13 @@ from django.contrib.auth.models import AbstractUser
 from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
+
+
+
 class CustomUser(AbstractUser):
     email = models.EmailField(_('email address'), unique=True)
     courses_submitted = models.IntegerField("courses_submitted", null=True, default=0)
+    favorite_courses = models.ManyToManyField('Course', related_name="users")
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["username"]
