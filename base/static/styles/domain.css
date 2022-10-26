@@ -12,16 +12,17 @@ a{
 h1 {
     text-align: center;
     font-size: 400%;
+    margin-bottom: 2%;
 }
 .domain-overlay{
     display: flex;
     background:linear-gradient( rgba(1, 10, 44,0.79), rgba(1, 10, 44,0.79) );
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
+    min-width: 100vw;
     backdrop-filter: blur(10px);
 }
 .Pagecontent{
-    margin: 10%;
+    margin: 8%;
 }
 p{
     text-align: justify;
@@ -33,9 +34,9 @@ p{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    opacity: 90%;
+    /* opacity: 90%; */
     font-size: 200%;
-    
+    margin-top: 5%;
 }
 .btn-webd {
     display: flex;
@@ -44,19 +45,21 @@ p{
     border: 0px solid;
     /* background-color: #555555; */
     /* background-color: rgb(59, 18, 153); */
-    background-image: linear-gradient(180deg, rgb(59, 18, 153),rgb(122, 91, 194));
+    /* background-image: linear-gradient(180deg, rgb(59, 18, 153),rgb(122, 91, 194)); */
+    background: linear-gradient(180deg, rgb(0, 204, 255), white);
     min-width: 300px;
     height: 150px;
-    border: 2px solid rgb(59, 18, 153);
-    color: white;
+    border: 2px solid rgb(31, 222, 242, 1);
+    color: black;
     margin: 6%;
     border-radius: 25px;
+    transition: all 0.75s;
 }
 
 .btn-webd:hover{
     background-image: linear-gradient(180deg, rgb(2, 13, 32),rgb(2, 13, 32));
     color: white;
-    border: 2px solid rgb(166, 77, 255);
+    border: 2px solid #1fdef2;
     opacity: 100%;
 }
 

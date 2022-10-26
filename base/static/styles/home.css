@@ -17,7 +17,9 @@ body{
     
 }
 
-.overlay{
+.roadmap-overlay{
+    display: flex;
+    flex-direction: column;
     min-height:100vh;
     max-width: 100vw;
     background: linear-gradient( rgba(1, 10, 44,0.79), rgba(1, 10, 44,0.79) );
@@ -69,7 +71,7 @@ ul li {
     /* flex: 1; */
     margin: 10px;
     border: 2px solid rgb(31, 222, 242, 1);
-    transition: all 0.2s;
+    transition: all 0.75s;
     
 }
 
