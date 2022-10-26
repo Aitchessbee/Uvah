@@ -1,3 +1,7 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 body{
     /* background-color: rgb(2, 13, 32); */
     background:linear-gradient( rgba(2, 13, 32,0.92), rgba(2, 13, 32,0.92) ), url('https://images.pexels.com/photos/315191/pexels-photo-315191.jpeg?auto=compress&cs=tinysrgb&w=1600');
@@ -104,10 +108,10 @@ h1 {
     /* transition: 0.5s; */
 }
 
-.links li:hover {
+/* .links li:hover {
     animation: colorchange 0.5s infinite alternate;
     background-color: rgb(30, 30, 44, 1);
-}
+} */
 
 .link {
     display: flex;  
@@ -172,10 +176,10 @@ h1 {
 }
 
 
-@keyframes colorchange{
+/* @keyframes colorchange{
     0%{background-color: rgb(30, 30, 44, 0.5);}
     100%{background-color: rgb(30, 30, 44, 1);}
-}
+} */
 
 
 
