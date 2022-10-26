@@ -11,7 +11,7 @@
 </head>
 <body>
     {% include 'base/navbar.html' %}
-
+    <div class="domain-overlay">
     <div class="Pagecontent">
     <h1>{{domain.domain_name}}</h1>
         <p class="content">{{domain.domain_description}}</p>
@@ -22,6 +22,7 @@
                 {% endfor %}
             </div>
         <div>
+    </div>
     </div>
 </body>
 </html>

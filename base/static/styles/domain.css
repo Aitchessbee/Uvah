@@ -1,6 +1,6 @@
 body{
     /* background-color: rgb(2, 13, 32); */
-    background:linear-gradient( rgba(2, 13, 32,0.92), rgba(2, 13, 32,0.92) ), url('https://images.pexels.com/photos/315191/pexels-photo-315191.jpeg?auto=compress&cs=tinysrgb&w=1600');
+    background: url('https://images.pexels.com/photos/315191/pexels-photo-315191.jpeg?auto=compress&cs=tinysrgb&w=1600');
     color: white;
     font-family: "Lucida Console", Monaco, monospace;
 }
@@ -12,11 +12,16 @@ a{
 h1 {
     text-align: center;
     font-size: 400%;
-    margin-bottom: 10vh;
-    margin-top:15vh;
 }
-.pagecontent{
-    margin: 20vh;
+.domain-overlay{
+    display: flex;
+    background:linear-gradient( rgba(1, 10, 44,0.79), rgba(1, 10, 44,0.79) );
+    height: 100vh;
+    width: 100vw;
+    backdrop-filter: blur(10px);
+}
+.Pagecontent{
+    margin: 10%;
 }
 p{
     text-align: justify;
@@ -27,6 +32,7 @@ p{
 .buttons-webd{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     opacity: 90%;
     font-size: 200%;
     
