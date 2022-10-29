@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Acme&family=Silkscreen&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Acme&family=Silkscreen&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap');
 *{
   padding:0;
@@ -6,7 +6,7 @@
 }
 body{
     font-family: 'Silkscreen', cursive;
-    background: linear-gradient(rgba(14, 19, 8, 0.95),rgb(0,0,0,0.95)), url('https://images.pexels.com/photos/1089455/pexels-photo-1089455.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background: url('https://images.pexels.com/photos/315191/pexels-photo-315191.jpeg?auto=compress&cs=tinysrgb&w=1600');
     background-size: cover;
 }
 .pagewrapper{
@@ -16,6 +16,8 @@ body{
   padding:0 auto;
   height:100vh;
   width: 100vw;
+  background:linear-gradient( rgba(1, 10, 44,0.79), rgba(1, 10, 44,0.79) );
+  backdrop-filter: blur(10px);
 }
 .pagewrapper h1{
   color:white;
@@ -24,7 +26,7 @@ body{
   letter-spacing:10px;
   font-family: 'Londrina Solid', cursive;
   font-size:30px;
-  margin:50px 0 20px 0;
+  margin:100px 0 20px 0;
 }
 .email-heading{
   color:white;
@@ -35,15 +37,15 @@ body{
 }
 .neon-box{
     margin:0 10px;
-    padding: 20px 0;
+    padding: 18px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background: linear-gradient(rgba(172, 255, 47, 0.101),rgba(255, 255, 255, 0.078));
     width: 500%;
-    border: solid 2px greenyellow;
-    border-radius: 5px; 
+    border: solid 2px rgb(47, 255, 255);
+    border-radius: 5px;
 }
 .content-wrapper{
   display:flex;

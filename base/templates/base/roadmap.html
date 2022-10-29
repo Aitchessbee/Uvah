@@ -1,35 +1,43 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UVAH</title>
-    <!-- <link rel="Stylesheet" href="index.css"> -->
-    <link rel="stylesheet" href="{% static 'styles/navbar.css' %}">
-    <link rel="stylesheet" href="{% static 'styles/home.css' %}" />
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-    {% include 'base/navbar.html' %}
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>UVAH</title>
+        <!-- <link rel="Stylesheet" href="index.css"> -->
+        <link rel="stylesheet" href="{% static 'styles/navbar.css' %}" />
+        <link rel="stylesheet" href="{% static 'styles/home.css' %}" />
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        {% include 'base/navbar.html' %}
+        <div class="roadmap-overlay">
+            <div id="header">
+                <h2>Welcome to Roadmap Section✌🏻</h2>
+                <p>
+                    We provide roadmaps to college students who wish to acquire
+                    new tech skills but are confused about which courses to
+                    follow.
+                </p>
+            </div>
+            <div id="main">
+                <div class="buttons">
+                    {% for domain in domains %}
+                    <a href="/roadmap/{{domain.domain_link}}" class="btn"
+                        >{{domain.domain_name}}</a
+                    >
+                    {% endfor %}
+                </div>
+            </div>
 
-    <div id="header">
-        <h2>Welcome to Roadmap Section✌🏻</h2>
-        <p>
-            We provide roadmaps to college students who wish to acquire new tech skills but are confused about which courses to follow. 
-        </p>
-    </div>
-    <div id="main">
-        <div class="buttons">
-            {% for domain in domains %}
-                <a href="/roadmap/{{domain.domain_link}}" class="btn">{{domain.domain_name}}</a>
-            {% endfor %}
+            <a href="#" class="float">
+                <img
+                    class="discord"
+                    src="https://img.icons8.com/ios-glyphs/30/ffffff/discord-logo.png"
+                />
+            </a>
         </div>
-    </div>
-
-    <a href="#" class="float">
-        <img class="discord" src="https://img.icons8.com/ios-glyphs/30/ffffff/discord-logo.png"/>
-    </a>
-</body>
+    </body>
 </html>

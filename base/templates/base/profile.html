@@ -8,14 +8,25 @@
     <link rel="stylesheet" href="{% static 'styles/navbar.css' %}">
     <link rel="stylesheet" href="{% static 'styles/profile.css' %}" />
     <title>Profile</title>
-</head>
-<body>
+  </head>
+  <body>
     {% include 'base/navbar.html' %}
     
     <div class="pagewrapper">
-        <div id="main-heading"><h1>Hi, {{user.username}}</h1></div>
-        <div class="email-heading"><h2>Username - {{user.username}}</h2></div>
-        <div class="email-heading"><h2>Email - {{user.email}}</h2></div>
+
+      <div id="main-heading"><h1>Hi, {{user.username}}</h1></div>
+      <div class="email-heading"><h2>Username - {{user.username}}</h2></div>
+      <div class="email-heading"><h2>Email - {{user.email}}</h2></div>
+
+      <div id="buttons">
+        <div class="btn-wrapper" id="change-pwd">
+          <button class="btn">Edit Profile</button>
+        </div>
+         <div class="btn-wrapper">
+          <a href="/logout" class="btn" id="logout-btn">logout</a href="/logout">
+        </div>
+      </div>
+      
         <div class="content-wrapper">
             <div class="neon-box">
               <h1>Your Bookmarked Courses</h1>
@@ -40,14 +51,6 @@
               {% endfor %}
             </div>
          </div>
-          <div id="buttons">
-            <div class="btn-wrapper" id="change-pwd">
-              <button class="btn">Edit Profile</button>
-            </div>
-             <div class="btn-wrapper">
-              <a href="/logout" class="btn" id="logout-btn">logout</a href="/logout">
-            </div>
-          </div>
               
        </div>
     
