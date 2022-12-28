@@ -11,7 +11,10 @@ A resource hub for learners giving them easy access to the best resources on the
 - Custom profile page showing the suggested and bookmarked courses for a user
 - Login and Signup page using latest authentication practices
 
-![image](https://user-images.githubusercontent.com/45175270/209334209-5b3e4292-8901-4538-bd6f-e48de23976a3.png)
+![image](https://user-images.githubusercontent.com/45175270/209786127-3e9a4a90-9e79-4ab7-9171-1208bc9d6964.png)
+![image](https://user-images.githubusercontent.com/45175270/209786159-aa63b882-3eaa-4963-86e5-5396f7bf69c3.png)
+![image](https://user-images.githubusercontent.com/45175270/209786255-3f43e243-bd9d-4b9e-b306-ca28d318d589.png)
+
 
 ## Tech Stack
 
