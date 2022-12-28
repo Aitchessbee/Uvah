@@ -11,6 +11,7 @@ A resource hub for learners giving them easy access to the best resources on the
 - Custom profile page showing the suggested and bookmarked courses for a user
 - Login and Signup page using latest authentication practices
 - Leaderboard ranking the users on the basis of number of courses suggested
+- Contact Us page so users can contact admins
 
 ![image](https://user-images.githubusercontent.com/45175270/209786127-3e9a4a90-9e79-4ab7-9171-1208bc9d6964.png)
 ![image](https://user-images.githubusercontent.com/45175270/209786159-aa63b882-3eaa-4963-86e5-5396f7bf69c3.png)
@@ -83,8 +84,17 @@ Start the server
 ## Endpoints
 
 - / - Landing page
-- signup/ - Register for the test
-- login/ - Login to portal
+- resgister/ - Register to the website
+- login/ - Login to website
+- logout/ - Logout from website
+- submit-course/ - Suggest a course\
+- roadmap/ - view roadmap / all domains
+- contact-us/ - Contact Admins for queries
+- profile/ - view profile
+- roadmap/<str:domain_link> - view specific domain
+- roadmap/<str:domain_link>/<str:topic_link/ - view specific topics
+- leaderboard/ - view leaderboard
+- course-approval/ - Course approval portal for admins
 - instructions/ - Instructions and Countdown to test time
 
 ## Team
