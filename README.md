@@ -10,6 +10,7 @@ A resource hub for learners giving them easy access to the best resources on the
 - Users can bookmark content
 - Custom profile page showing the suggested and bookmarked courses for a user
 - Login and Signup page using latest authentication practices
+- Leaderboard ranking the users on the basis of number of courses suggested
 
 ![image](https://user-images.githubusercontent.com/45175270/209786127-3e9a4a90-9e79-4ab7-9171-1208bc9d6964.png)
 ![image](https://user-images.githubusercontent.com/45175270/209786159-aa63b882-3eaa-4963-86e5-5396f7bf69c3.png)
