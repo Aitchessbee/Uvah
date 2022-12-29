@@ -107,7 +107,11 @@ def topic(request, domain_link, topic_link):
     subtopics = Subtopic.objects.filter(topic=topic)
     # courses = Course.objects.filter(subtopic_id__in=list(Topic.objects.filter(topic_name=topic).values_list('id', flat=True)))
     courses = Course.objects.filter(subtopic__in=subtopics, approved=True)
-    favorite_courses = request.user.favorite_courses.filter(subtopic__in=subtopics)
+
+    if request.user.is_authenticated:
+        favorite_courses = request.user.favorite_courses.filter(subtopic__in=subtopics)
+    else:
+        favorite_courses = []
 
     print(favorite_courses)
 

@@ -30,7 +30,8 @@ class Topic(models.Model):
     topic_link = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.topic_name
+        # return self.topic_name
+        return "{} {}".format(self.topic_name, self.domain)
 
 class Subtopic(models.Model):
     domain = models.ForeignKey(Domain, on_delete=models.SET_NULL, null=True)
@@ -40,7 +41,8 @@ class Subtopic(models.Model):
     subtopic_link = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.subtopic_name
+        # return self.subtopic_name
+        return "{} {}".format(self.subtopic_name, self.domain)
 
 class Course(models.Model):
     submitted_by = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True)
