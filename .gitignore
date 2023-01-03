@@ -1,3 +1,7 @@
 .env
 __pycache__
 env
+
+# this is temporary
+db.sqlite3
+# doing this so that your data does not get affected

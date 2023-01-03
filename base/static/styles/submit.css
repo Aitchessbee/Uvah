@@ -42,7 +42,7 @@ body{
     font-size: 300%;
 }
 .submit-parameter{
-    width: 60%;
+    width: 65%;
     height:8%;
     margin: 10px 0;
     padding: 0 10px; 
@@ -50,18 +50,46 @@ body{
     border-radius: 4px;
     background-color: rgba(172, 255, 47, 0) ;
     color: aliceblue;
-    border: solid 2px greenyellow;
+    /* border: solid 2px greenyellow; */
+    border: solid 2px rgb(47, 255, 255);
 }
-.submit-parameter:focus{
-    width: 60%;
-    height:8%;
+
+
+#domain-drop{
+    width: 69%;
+    height:9%;
     margin: 10px 0;
     padding: 0 10px; 
     border: solid 2px rgb(17, 28, 17);
     border-radius: 4px;
     background-color: rgba(172, 255, 47, 0) ;
     color: aliceblue;
-    border: solid 2px greenyellow;
+    /* border: solid 2px greenyellow; */
+    border: solid 2px rgb(47, 255, 255);    
+}
+#topic-drop{
+    width: 69%;
+    height:9%;
+    margin: 10px 0;
+    padding: 0 10px; 
+    border: solid 2px rgb(17, 28, 17);
+    border-radius: 4px;
+    background-color: rgba(172, 255, 47, 0) ;
+    color: aliceblue;
+    /* border: solid 2px greenyellow; */
+    border: solid 2px rgb(47, 255, 255);    
+}
+#subtopic-drop{
+    width: 69%;
+    height:9%;
+    margin: 10px 0;
+    padding: 0 10px; 
+    border: solid 2px rgb(17, 28, 17);
+    border-radius: 4px;
+    background-color: rgba(172, 255, 47, 0) ;
+    color: aliceblue;
+    /* border: solid 2px greenyellow; */
+    border: solid 2px rgb(47, 255, 255);    
 }
 .submit-btn{
     background-color: rgba(172, 255, 47, 0.101) ;
@@ -71,7 +99,8 @@ body{
     border-radius: 10px;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    border: solid 2px greenyellow;
+    /* border: solid 2px greenyellow; */
+    border: solid 2px rgb(47, 255, 255);
     transition: box-shadow 0.1s;
 }
 .submit-btn:hover{
@@ -82,9 +111,10 @@ body{
     border-radius: 10px;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    border: solid 2px greenyellow;
+    /* border: solid 2px greenyellow; */
+    border: solid 2px rgb(47, 255, 255);
     cursor: pointer;
-    box-shadow: 0 0 10px 4px rgb(207, 241, 13);
+    box-shadow: 0 0 10px 4px rgb(0, 255, 221);
 }
 #courselink{
     width: 56%;
