@@ -40,6 +40,7 @@ body{
 #submit-box h1{
     color: white;
     font-size: 300%;
+    margin-bottom: 2%;
 }
 .submit-parameter{
     width: 65%;
