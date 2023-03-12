@@ -247,4 +247,3 @@ def course_approval(request):
 
     
     return render(request, "base/approval.html", context)
-
